@@ -1,10 +1,15 @@
 const express = require('express');
+const phonebook = require('./controller/phonebook/router');
 require('dotenv').config();
+var cors = require('cors')
 const app = express();
 
+app.use(cors())
 app.use(express.json());
 
-app.get('/', function (req, res) {
+app.use('/phonebook', phonebook);
+
+app.get('/', function (_req, res) {
   res.send('Hello World');
 });
 
