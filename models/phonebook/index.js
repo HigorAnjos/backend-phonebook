@@ -1,3 +1,3 @@
-const getAll = require('./getAll');
+const getAll = require('./getAllById');
 
 module.exports = { getAll };
