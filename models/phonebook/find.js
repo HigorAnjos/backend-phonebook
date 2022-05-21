@@ -7,3 +7,5 @@ const find = async (use_id) => {
 
   return phonebook;
 }
+
+module.exports = find;
