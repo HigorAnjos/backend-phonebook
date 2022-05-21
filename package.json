@@ -20,7 +20,10 @@
     "mysql2": "^2.3.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
     "chai": "^4.3.6",
+    "husky": "^8.0.1",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.15",
     "sinon": "^14.0.0"
