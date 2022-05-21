@@ -1,5 +1,6 @@
 const express = require('express');
 const phonebook = require('./controller/phonebook/router');
+const login = require('./controller/login/router');
 require('dotenv').config();
 var cors = require('cors')
 const app = express();
@@ -8,6 +9,7 @@ app.use(cors())
 app.use(express.json());
 
 app.use('/phonebook', phonebook);
+app.use('/login', login);
 
 app.get('/', function (_req, res) {
   res.send('Hello World');
