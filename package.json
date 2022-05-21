@@ -19,6 +19,9 @@
     "mysql2": "^2.3.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.15",
+    "sinon": "^14.0.0"
   }
 }
