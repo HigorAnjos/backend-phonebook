@@ -3,6 +3,6 @@ const auth = require('../../middlewares/auth');
 const list = require('./list');
 const router = express.Router({ mergeParams: true });
 
-router.get('/:id', auth, list);
+router.get('/', auth, list);
 
 module.exports = router;
