@@ -1,11 +1,22 @@
 const connection = require('../connection');
 
-const list = async (use_id) => {
-	const query = 'SELECT * FROM model_phonebook.user WHERE id = ?';
+const factory = (phonebook, user_id) => {
+	return {
+		id: user_id,
+		phonebook: phonebook, /// [{"name": "alguem","number": "+380967891234"}, {}, {}]
+	}
+}
 
-	const [ phonebook ] = await connection.execute(query, [use_id]);
+const list = async (user_id) => {
+	const query = `SELECT phone.name, phone.number
+	FROM model_phonebook.phonebook as phone
+	INNER JOIN model_phonebook.user as user ON user.id = phone.user_id
+	WHERE phone.user_id = ?`;
 
-  return phonebook;
+	const [ phonebook ] = await connection.execute(query, [user_id]);
+
+	console.log("Apos", phonebook);
+  return factory(phonebook, user_id);
 }
 
 module.exports = list;
