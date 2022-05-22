@@ -1,4 +1,5 @@
-const model = require('../../models/user');
+const services = require('../../services/user/index');
+
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
@@ -18,7 +19,7 @@ const login = async (req, res) => {
     });
   }
   // busca usuário
-  const [userFound]  = await model.find(email, user_password);
+  const userFound = await services.login(email, user_password);
   
   if (!userFound) {
     return res.status(400).json({
@@ -33,6 +34,7 @@ const login = async (req, res) => {
   }
 
   console.log(userFound);
+  
   // cria token
   const {password, ...userWithoutPassword} = userFound;
 
