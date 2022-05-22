@@ -14,7 +14,6 @@ const list = async (user_id) => {
 	WHERE phone.user_id = ?`;
 
 	const [ phonebook ] = await connection.execute(query, [user_id]);
-
   return factory(phonebook, user_id);
 }
 
