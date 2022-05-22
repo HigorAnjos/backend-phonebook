@@ -3,7 +3,7 @@ const connection = require('../connection');
 const factory = (phonebook, user_id) => {
 	return {
 		id: user_id,
-		phonebook: phonebook, /// [{"name": "alguem","number": "+380967891234"}, {}, {}]
+		phonebook: phonebook, /// [{name: 'alguem', number: '+380967891234'}, {}, {}]
 	}
 }
 
