@@ -15,7 +15,6 @@ const list = async (user_id) => {
 
 	const [ phonebook ] = await connection.execute(query, [user_id]);
 
-	console.log("Apos", phonebook);
   return factory(phonebook, user_id);
 }
 
