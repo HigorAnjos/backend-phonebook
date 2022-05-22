@@ -1,10 +1,11 @@
 const model = require('../../models/login');
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
 const API_SECRET = process.env.SECRET_KEY || 'mysecret';
 
 const JWT_CONFIG = {
-  expiresIn: '1h',
+  expiresIn: '10h',
   algorithm: 'HS256'
 };
 
