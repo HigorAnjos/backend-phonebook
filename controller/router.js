@@ -8,7 +8,7 @@ root.use('/phonebook', phonebook);
 root.use('/user', user);
 
 root.get('/', function (_req, res) {
-  res.send('Hello World');
+  return res.send({ message: "Hello World" });
 });
 
 module.exports = root;
