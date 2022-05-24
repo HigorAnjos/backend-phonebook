@@ -1,8 +1,6 @@
 const request = require("supertest")
-const app = require('../../../server')
+const app = require('../server')
 const { expect } = require('chai');
-const sinon = require('sinon');
-const controller = require('../../../controller/router')
 
 describe('Deve responder Hello World', () => {
   it('hello word', async () => {
