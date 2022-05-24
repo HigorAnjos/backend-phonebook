@@ -22,6 +22,7 @@ const auth = (req, res, next) => {
       req.user = { id, userName } ;
       
     } catch (err) {
+      console.log(err);
       return res.status(400).json({
         message: 'Token inválido',
         error: err,
