@@ -8,6 +8,7 @@ const create = async (req, res) => {
     }
   }
   const isOk = await services.create(name, email, password);
+  
   if(!isOk) {
     return res.status(400).json({
       error: 'Erro ao cria usuário'

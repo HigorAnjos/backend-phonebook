@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "mocha": "mocha tests/models/phonebook/list.test.js --exit",
     "test": "mocha ./tests/**/**/**/*$NAME*.test.js --exit",
     "dev": "nodemon index.js",
     "start": "node index.js"
