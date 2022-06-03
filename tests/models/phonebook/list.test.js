@@ -3,31 +3,31 @@ const sinon = require('sinon');
 const connection = require('../../../models/connection');
 const models = require('../../../models/phonebook/index');
 
-describe(('Listar numeros do user ID 1'), function () {
-  const DB_MOC = [{
-    name: 'alguem',
-    number: '+380967891234',
-  }];
+describe('Testando models list quando sucesso', () => {
+  const DB_MOC = [[{id: 5, name: 'Nome', number: '+380967891234'}]];
+  const userId = 1;
 
-  before(function () {
-    sinon.stub(connection, 'execute').resolves([DB_MOC]);
+  before(() => {
+    sinon.stub(connection, 'execute').resolves(DB_MOC);
   });
 
-  after(function () {
+  after(() => {
     connection.execute.restore();
   });
 
-  it('Deve retornar um objeto com a chave id igual a 1', async function () {
-    const user_id = 1;
-    const expected = user_id;
-    const result = await models.list(user_id);
-    expect(result.id).to.be.equal(expected);
-  });
+  it('Deve retornar um Objeto com chaves userId e phonebook array de objetos', async () => {
+    const expected = {
+      userId,
+      phonebook: [{id: 5, name: 'Nome', number: '+380967891234'}]
+    };
+    const result = await models.list(userId);
 
-  it('Deve retornar um objeto com a chave phonebook igual a [{name: "alguem", number: "+380967891234"}]', async function () {
-    const user_id = 1;
-    const expected = DB_MOC;
-    const result = await models.list(user_id);
-    expect(result.phonebook).to.be.equal(expected);
+    expect(result.phonebook).to.be.a('array');
+    expect(result).to.be.a('object');
+    expect(result.phonebook[0]).to.be.a('object');
+    expect(result).to.be.eql(expected);
+    expect(result).to.have.property('userId');
+    expect(result).to.have.property('phonebook');
+    expect(result).to.be.deep.equal(expected);
   });
 });
