@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "mocha": "mocha tests/models/phonebook/list.test.js --exit",
-    "test": "mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
+    "test": "nyc --all mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
@@ -27,6 +27,7 @@
     "husky": "^8.0.1",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.15",
+    "nyc": "^15.1.0",
     "sinon": "^14.0.0",
     "supertest": "^6.2.3"
   }
