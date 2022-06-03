@@ -3,11 +3,11 @@ const services = require('../../../services/phonebook');
 const sinon = require('sinon');
 const { expect } = require('chai');
 
-describe.only('Testando rota de listar', () => {
+describe('Testando rota de listar', () => {
   const req = {};
   const res = {};
 
-  before(() =>{
+  before(() => {
     req.user = { id: 1 };
 
     res.status = sinon.stub().returns(res);
