@@ -2,7 +2,7 @@ const connection = require('../connection');
 
 const serialize = (phonebook, user_id) => {
 	return {
-		id: user_id,
+		userId: user_id,
 		phonebook, /// [{name: 'alguem', number: '+380967891234'}, {}, {}]
 	}
 }
@@ -16,7 +16,5 @@ const list = async (userId) => {
 	const [ phonebook ] = await connection.execute(query, [userId]);
   return serialize(phonebook, userId);
 }
-
-list(1).then(console.log);
 
 module.exports = list;
