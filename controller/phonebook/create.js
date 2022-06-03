@@ -10,7 +10,7 @@ const create = async (req, res) => {
     return res.status(400).json({ error: 'Não foi possivel cadastrar o numero' });
   }
 
-  return res.status(201).json({ message: 'Numero cadastrado com sucesso' });
+  return res.status(201).json({ id: isOk });
 };
 
 module.exports = create;
