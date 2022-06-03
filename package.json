@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "mocha": "mocha tests/models/phonebook/list.test.js --exit",
-    "test": "nyc --all mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
+    "test": "mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
+    "test:nyc": "nyc --all mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
