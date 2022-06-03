@@ -32,8 +32,6 @@ const login = async (req, res) => {
       error: 'Senha incorreta'
     });
   }
-
-  console.log(userFound);
   
   // cria token
   const {password, ...userWithoutPassword} = userFound;
