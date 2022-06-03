@@ -1,11 +1,22 @@
 const connection = require('../connection');
 
-const find = async (userId) => {
-  const query = 'SELECT * FROM model_phonebook.phonebook WHERE id = ?';
+const serialize = (contact) => ({
+  userId: contact.user_id,
+  contact: {
+    id: contact.id,
+    name: contact.name,
+    phone: contact.number,
+  },
+});
 
-  const [[ userFound ]] = await connection.execute(query, [userId]);
+const find = async (userId, phoneId) => {
+  const query = 'SELECT * FROM model_phonebook.phonebook WHERE user_id = ? AND id = ?';
 
-  return userFound;
+  const [[ contactFound ]] = await connection.execute(query, [userId, phoneId]);
+
+  if (!contactFound) return null;
+
+  return serialize(contactFound);
 }
 
 module.exports = find;
