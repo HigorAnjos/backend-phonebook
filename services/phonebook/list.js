@@ -1,8 +1,9 @@
 const model = require('../../models/phonebook/index');
 
 const list = async (id) => {
-  const result = await model.list(id);
-  return result;
+  const phonebook = await model.list(id);
+
+  return phonebook;
 }
 
 module.exports = list;
