@@ -5,7 +5,7 @@ const list = async (req, res) => {
 
   const phonebook = await services.list(userId);
 
-  return res.status(200).send(phonebook);
+  return res.status(200).json(phonebook);
 };
 
 module.exports = list;
