@@ -8,6 +8,4 @@ const remove = async (userId, phoneId) => {
   return affectedRows;
 }
 
-remove(39, 1).then(console.log);
-
 module.exports = remove;
