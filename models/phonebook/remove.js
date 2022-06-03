@@ -6,6 +6,6 @@ const remove = async (userId, phoneId) => {
   const [{ affectedRows }] = await connection.execute(query, [phoneId, userId]);
 
   return affectedRows;
-}
+};
 
 module.exports = remove;

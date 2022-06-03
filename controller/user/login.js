@@ -7,7 +7,7 @@ const API_SECRET = process.env.SECRET_KEY || 'mysecret';
 
 const JWT_CONFIG = {
   expiresIn: '40h',
-  algorithm: 'HS256'
+  algorithm: 'HS256',
 };
 
 const login = async (req, res) => {
@@ -15,7 +15,7 @@ const login = async (req, res) => {
   // valida
   if (!email || !user_password) {
     return res.status(400).json({
-      error: 'Dados incompletos'
+      error: 'Dados incompletos',
     });
   }
   // busca usuário
@@ -23,22 +23,22 @@ const login = async (req, res) => {
   
   if (!userFound) {
     return res.status(400).json({
-      error: 'Usuário não encontrado'
-    })
+      error: 'Usuário não encontrado',
+    });
   }
 
   if (userFound.password !== user_password) {
     return res.status(400).json({
-      error: 'Senha incorreta'
+      error: 'Senha incorreta',
     });
   }
   
   // cria token
-  const {password, ...userWithoutPassword} = userFound;
+  const { password, ...userWithoutPassword } = userFound;
 
   const token = jwt.sign({ data: userWithoutPassword }, API_SECRET, JWT_CONFIG);
 
   return res.status(200).json(token); // token
-}
+};
 
 module.exports = login;

@@ -12,11 +12,11 @@ const serialize = (contact) => ({
 const find = async (userId, phoneId) => {
   const query = 'SELECT * FROM model_phonebook.phonebook WHERE user_id = ? AND id = ?';
 
-  const [[ contactFound ]] = await connection.execute(query, [userId, phoneId]);
+  const [[contactFound]] = await connection.execute(query, [userId, phoneId]);
 
   if (!contactFound) return null;
 
   return serialize(contactFound);
-}
+};
 
 module.exports = find;

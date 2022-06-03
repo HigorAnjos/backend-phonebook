@@ -7,8 +7,7 @@
     "mocha": "mocha tests/models/phonebook/list.test.js --exit",
     "test": "nyc --all mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
     "dev": "nodemon index.js",
-    "start": "node index.js",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -25,9 +24,6 @@
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
     "chai": "^4.3.6",
-    "eslint": "^8.16.0",
-    "eslint-config-trybe-backend": "^1.0.4",
-    "eslint-plugin-sonarjs": "^0.13.0",
     "husky": "^8.0.1",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.15",

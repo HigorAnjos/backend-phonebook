@@ -6,6 +6,6 @@ const create = async (name, phone, userId) => {
   const [{ insertId }] = await connection.execute(query, [name, phone, userId]);
   
   return insertId;
-}
+};
 
 module.exports = create;

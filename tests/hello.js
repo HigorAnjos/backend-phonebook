@@ -1,13 +1,13 @@
-const request = require("supertest")
-const app = require('../server')
+const request = require('supertest');
 const { expect } = require('chai');
+const app = require('../server');
 
 // test de intefraçao
-describe('Deve responder Hello World', () => {
-  it('hello word', async () => {
+describe('Deve responder Hello World', function () {
+  it('hello word', async function() {
     // Subir o servidor
     const res = await request(app).get('/');
 
-    expect(res.body.message).to.be.equal("Hello World")
-  })
+    expect(res.body.message).to.be.equal('Hello World');
+  });
 });

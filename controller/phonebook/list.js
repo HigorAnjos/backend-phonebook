@@ -6,6 +6,6 @@ const list = async (req, res) => {
   const phonebook = await services.list(userId);
 
   return res.status(200).send(phonebook);
-}
+};
 
 module.exports = list;

@@ -6,7 +6,6 @@ const login = async (email, password) => {
     return null;
   }
   return user;
-
-}
+};
 
 module.exports = login;

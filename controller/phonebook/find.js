@@ -15,6 +15,6 @@ const find = async (req, res) => {
   console.log(contactFound);
 
   return res.status(200).send(contactFound);
-}
+};
 
 module.exports = find;

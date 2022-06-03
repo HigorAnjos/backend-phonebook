@@ -11,6 +11,6 @@ const remove = async (req, res) => {
   }
 
   return res.status(200).end();
-}
+};
 
 module.exports = remove;

@@ -6,6 +6,6 @@ const update = async (userId, name, phone, phoneId) => {
   const [{ affectedRows }] = await connection.execute(query, [name, phone, phoneId, userId]);
 
   return affectedRows;
-}
+};
 
 module.exports = update;

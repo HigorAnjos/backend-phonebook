@@ -12,6 +12,6 @@ const update = async (req, res) => {
   }
 
   return res.status(200).json({ message: 'Numero atualizado com sucesso' });
-}
+};
 
 module.exports = update;

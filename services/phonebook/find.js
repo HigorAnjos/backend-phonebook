@@ -8,6 +8,6 @@ const find = async (userId, phoneId) => {
   }
 
   return contactFound;
-}
+};
 
 module.exports = find;

@@ -11,6 +11,6 @@ const create = async (req, res) => {
   }
 
   return res.status(201).json({ message: 'Numero cadastrado com sucesso' });
-}
+};
 
 module.exports = create;

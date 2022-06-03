@@ -7,9 +7,9 @@ const auth = (req, res, next) => {
   try {
     const { authorization } = req.headers;
     
-    if(!authorization) {
+    if (!authorization) {
       return res.status(401).json({
-        error: 'Token não informado'
+        error: 'Token não informado',
       });
     }
     
@@ -19,8 +19,7 @@ const auth = (req, res, next) => {
       const userName = decoded.data.name;
       const { id } = decoded.data;
       
-      req.user = { id, userName } ;
-      
+      req.user = { id, userName };
     } catch (err) {
       return res.status(400).json({
         message: 'Token inválido',
