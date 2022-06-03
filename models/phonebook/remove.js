@@ -1,11 +1,13 @@
 const connection = require('../connection');
 
-const remove = async (phone_id, user_id) => {
+const remove = async (phoneId, userId) => {
   const query = 'DELETE FROM model_phonebook.phonebook WHERE id = ? AND user_id = ?';
 
-  const [ phonebook ] = await connection.execute(query, [phone_id, user_id]);
+  const [{ affectedRows }] = await connection.execute(query, [phoneId, userId]);
 
-  return phonebook;
+  return affectedRows;
 }
+
+remove(39, 1).then(console.log);
 
 module.exports = remove;
