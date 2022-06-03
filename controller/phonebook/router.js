@@ -1,10 +1,6 @@
 const express = require('express');
 const auth = require('../../middlewares/auth');
-const list = require('./list');
-const create = require('./create');
-const find = require('./find');
-const update = require('./update');
-const remove = require('./remove');
+const { list, find, create, update, remove } = require('./index');
 
 const router = express.Router({ mergeParams: true });
 
