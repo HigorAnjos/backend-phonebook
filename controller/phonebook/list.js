@@ -1,11 +1,11 @@
 const services = require('../../services/phonebook/index');
 
 const list = async (req, res) => {
-  const { id } = req.user;
+  const { id: userId } = req.user;
 
-  const result = await services.list(id);
+  const phonebook = await services.list(userId);
 
-  return res.status(200).send(result);
+  return res.status(200).send(phonebook);
 }
 
 module.exports = list;
