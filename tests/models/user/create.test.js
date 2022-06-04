@@ -4,8 +4,8 @@ const { expect } = require('chai');
 const connection = require('../../../models/connection');
 
 describe('Testando models create quando sucesso', () => {
-  const inserId = 1;
-  const DB_MOC = [{ inserId }];
+  const insertId = 1;
+  const DB_MOC = [{ insertId }];
 
   before(() => {
     sinon.stub(connection, 'execute').resolves(DB_MOC);
@@ -23,6 +23,6 @@ describe('Testando models create quando sucesso', () => {
 
     const newUserId = await models.create(name, email, password);
 
-    expect(newUserId).to.be.equal(inserId);
+    expect(newUserId).to.be.equal(insertId);
   });
 });
