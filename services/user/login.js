@@ -1,10 +1,12 @@
-const model = require('../../models/user/index');
+const models = require('../../models/user/index');
 
-const login = async (email, password) => {
-  const [user] = await model.find(email, password);
+const login = async (email) => {
+  const [user] = await models.find(email);
+
   if (!user) {
     return null;
   }
+
   return user;
 };
 
