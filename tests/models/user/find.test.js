@@ -23,7 +23,7 @@ describe('Testando models find user', () => {
     const email = 'george@gmail.com';
     const password = '1234';
 
-    const user = await models.find(email, password);
+    const user = await models.find(email);
 
     expect(user).to.be.an('array');
     expect(user).to.be.deep.equal(DB_MOC[0]);
