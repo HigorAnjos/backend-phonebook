@@ -3,8 +3,8 @@ USE model_phonebook;
 CREATE TABLE user (
 	id INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(30) NOT NULL,
-	email VARCHAR(30) NOT NULL,
-  password VARCHAR(30) NOT NULL,
+	email VARCHAR(30) UNIQUE NOT NULL,
+  password VARCHAR(60) NOT NULL,
 	PRIMARY KEY(id)
 );
 
