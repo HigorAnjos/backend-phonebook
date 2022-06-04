@@ -1,5 +1,5 @@
-const find = require('./find');
 const bcrypt = require('bcrypt');
+const find = require('./find');
 
 const login = async (email, userInsertedPassword) => {
   const userFound = await find(email); // humm pedir ajudar pra criar o teste ---

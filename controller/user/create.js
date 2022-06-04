@@ -1,5 +1,5 @@
-const services = require('../../services/user/index');
 const bcrypt = require('bcrypt');
+const services = require('../../services/user/index');
 
 const create = async (req, res) => {
   const { name, email, password } = req.body;

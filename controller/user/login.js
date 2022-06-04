@@ -1,7 +1,7 @@
+const jwt = require('jsonwebtoken');
 const services = require('../../services/user/index');
 
 require('dotenv').config();
-const jwt = require('jsonwebtoken');
 
 const API_SECRET = process.env.SECRET_KEY || 'mysecret';
 
@@ -20,7 +20,7 @@ const login = async (req, res) => {
   }
   const userCanLogin = await services.login(email, userInsertedPassword);
 
-  if(!userCanLogin) {
+  if (!userCanLogin) {
     return res.status(400).json({
       error: 'Senha ou email incorretos',
     });
