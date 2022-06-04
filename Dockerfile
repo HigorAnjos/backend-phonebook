@@ -1,4 +1,4 @@
-FROM node:16 as phonebook
+FROM node:16
 
 WORKDIR /app
 

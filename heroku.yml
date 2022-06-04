@@ -1,7 +1,4 @@
 build:
   docker:
-    web: Dokerfile
+    web: Dockerfile
 
-# opcional
-run:
-  web: npm start
