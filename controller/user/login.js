@@ -1,5 +1,4 @@
 const services = require('../../services/user/index');
-const bcrypt = require('bcrypt');
 
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
@@ -12,33 +11,23 @@ const JWT_CONFIG = {
 };
 
 const login = async (req, res) => {
-  const { email, password: user_password } = req.body;
+  const { email, password: userInsertedPassword } = req.body;
   // valida
-  if (!email || !user_password) {
+  if (!email || !userInsertedPassword) {
     return res.status(400).json({
       error: 'Dados incompletos',
     });
   }
-  // busca usuário
-  const userFound = await services.login(email);
+  const userCanLogin = await services.login(email, userInsertedPassword);
 
-  if (!userFound) {
+  if(!userCanLogin) {
     return res.status(400).json({
-      error: 'Usuário não encontrado',
-    });
-  }
-
-  // valida senha
-  const isCorret = await bcrypt.compare(user_password, userFound.password);
-
-  if (!isCorret) {
-    return res.status(400).json({
-      error: 'Senha incorreta',
+      error: 'Senha ou email incorretos',
     });
   }
 
   // cria token
-  const { password, ...userWithoutPassword } = userFound;
+  const { password, ...userWithoutPassword } = userCanLogin;
 
   const token = jwt.sign({ data: userWithoutPassword }, API_SECRET, JWT_CONFIG);
 
