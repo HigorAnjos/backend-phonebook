@@ -1,0 +1,7 @@
+build:
+  docker:
+    web: Dokerfile
+
+# opcional
+run:
+  web: npm start
