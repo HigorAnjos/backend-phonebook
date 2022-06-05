@@ -1,11 +1,11 @@
 const connection = require('../connection');
 
 const update = async (userId, name, phone, phoneId) => {
-  const query = 'UPDATE model_phonebook.phonebook SET name = ?, number = ? WHERE id = ? AND user_id = ?';
+  const query = 'UPDATE phonebook SET name = $1, number = $2 WHERE id = $3 AND users_id = $4 RETURNING *';
 
-  const [{ affectedRows }] = await connection.execute(query, [name, phone, phoneId, userId]);
+  const [{ id }] = await connection.query(query, [name, phone, phoneId, userId]);
 
-  return affectedRows;
+  return id;
 };
 
 module.exports = update;

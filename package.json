@@ -22,7 +22,7 @@
     "express-async-errors": "^3.1.1",
     "express-rescue": "^1.1.31",
     "jsonwebtoken": "^8.5.1",
-    "mysql2": "^2.3.3"
+    "pg-promise": "^10.11.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
