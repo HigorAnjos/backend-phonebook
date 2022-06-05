@@ -16,6 +16,4 @@ const list = async (userId) => {
   return serialize(phonebook, userId);
 };
 
-list(1).then(console.log);
-
 module.exports = list;

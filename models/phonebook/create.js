@@ -8,6 +8,4 @@ const create = async (name, phone, userId) => {
   return insertId;
 };
 
-create('John', '+380979797979', 1).then(console.log);
-
 module.exports = create;
