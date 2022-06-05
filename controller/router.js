@@ -11,14 +11,7 @@ root.use('/user', user);
 
 root.get('/', (_req, res) => res.send({
   message: 'Hello World',
-  ambiente: process.env.DB_HOST,
 }));
-
-console.log('process.env.DB_HOST', process.env.DB_HOST);
-console.log('process.env.DB_PORT', process.env.DB_PORT);
-console.log('process.env.DB_NAME', process.env.DB_NAME);
-console.log('process.env.DB_USER', process.env.DB_USER);
-console.log('process.env.DB_PASS', process.env.DB_PASS);
 
 root.use((error, _req, res, _next) => {
   res.status(error.status || 500);
