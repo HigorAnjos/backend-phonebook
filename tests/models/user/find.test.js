@@ -4,12 +4,12 @@ const { expect } = require('chai');
 const connection = require('../../../models/connection');
 
 describe('Testando models find user', () => {
-  const DB_MOC = [[{
+  const DB_MOC = [{
       id: 1,
       name: 'George',
       email: 'george@gmail.com',
       password: '1234'
-    }]];
+    }];
 
   before(() => {
     sinon.stub(connection, 'execute').resolves(DB_MOC);

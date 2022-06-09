@@ -7,11 +7,11 @@ const serialize = (phonebook, userId) => ({
 
 const list = async (userId) => {
   const query = `SELECT phone.id, phone.name, phone.number as phone
-  FROM model_phonebook.phonebook as phone
-  INNER JOIN model_phonebook.user as user ON user.id = phone.user_id
-  WHERE phone.user_id = ?`;
+  FROM phonebook as phone
+  INNER JOIN users as users ON users.id = phone.users_id
+  WHERE phone.users_id = $1`;
 
-  const [phonebook] = await connection.execute(query, [userId]);
+  const phonebook = await connection.query(query, [userId]);
 
   return serialize(phonebook, userId);
 };

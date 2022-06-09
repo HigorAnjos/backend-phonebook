@@ -19,7 +19,7 @@ services:
     working_dir: /app
     # Lista de volumes (diretórios) mapeados de fora para dentro do container
     volumes:
-      # Monta o diretório atual, com todos os dados do projeto, 
+      # Monta o diretório atual, com todos os dados do projeto,
       # dentro do diretório /app
       - ./:/app
     # Lista de serviços do qual este serviço depende
@@ -34,21 +34,23 @@ services:
     # Configura as variáveis de ambiente dentro do container
     environment:
       DB_USER: root
-      DB_PASS: password
-      DB_NAME: model_phonebook
+      DB_PASS: postgres
+      DB_NAME: postgres
       DB_HOST: db # Nome do service logo abaixo
       PORT: '3001'
 
   # Serviço que irá rodar o banco de dados
   db:
     container_name: phonebook_db
-    image: mysql:5.7
+    image: postgres:14.1-alpine
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 'password'
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     ports:
       # Garanta que não haverá conflitos de porta com um banco que esteja
       # rodando localmente
-      - 3306:3306
+      - 5432:5432
 
 # Lista de redes que os containeres irão utilizar
 networks:

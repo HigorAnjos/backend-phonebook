@@ -1,9 +1,9 @@
 const connection = require('../connection');
 
 const create = async (name, email, password) => {
-  const query = 'INSERT INTO model_phonebook.user (name, email, password) VALUES (?, ?, ?)';
+  const query = 'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *';
 
-  const [{ insertId }] = await connection.execute(query, [name, email, password]);
+  const [{ id: insertId }] = await connection.query(query, [name, email, password]);
 
   return insertId;
 };

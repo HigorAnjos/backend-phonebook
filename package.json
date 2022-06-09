@@ -5,11 +5,16 @@
   "main": "index.js",
   "scripts": {
     "mocha": "mocha tests/models/phonebook/list.test.js --exit",
-    "test": "mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
+    "test:uni": "mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
     "test:nyc": "nyc --all mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
+    "test": "jest --runInBand --testTimeout=60000",
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "lint": "eslint -c .eslintrc.json ."
+    "lint": "eslint -c .eslintrc.json .",
+    "restore": "node ./tests/restoreDb.js"
+  },
+  "jest": {
+    "rootDir": "./tests/integration"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +27,8 @@
     "express-async-errors": "^3.1.1",
     "express-rescue": "^1.1.31",
     "jsonwebtoken": "^8.5.1",
-    "mysql2": "^2.3.3"
+    "pg": "^8.7.3",
+    "pg-promise": "^10.11.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
@@ -33,9 +39,12 @@
     "eslint-plugin-mocha": "^10.0.5",
     "eslint-plugin-sonarjs": "^0.13.0",
     "husky": "^8.0.1",
+    "jest": "^28.1.1",
     "mocha": "^10.0.0",
+    "mysql-import": "^5.0.21",
     "nodemon": "^2.0.15",
     "nyc": "^15.1.0",
+    "pgtools": "^0.3.2",
     "sinon": "^14.0.0",
     "supertest": "^6.2.3"
   }

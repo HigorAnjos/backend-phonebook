@@ -5,7 +5,8 @@
   },
   "extends": "trybe-backend",
   "parserOptions": {
-    "ecmaVersion": "latest",
+    // "ecmaVersion": "latest",
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
   "ignorePatterns": ["tests/**/**/*.js", "tests/**/*.js", "*.json"],
