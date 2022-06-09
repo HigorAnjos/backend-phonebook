@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "mocha": "mocha tests/models/phonebook/list.test.js --exit",
-    "test": "mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
+    "test:uni": "mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
     "test:nyc": "nyc --all mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
+    "test": "jest --runInBand --testTimeout=60000",
     "dev": "nodemon index.js",
     "start": "node index.js",
     "lint": "eslint -c .eslintrc.json .",
     "restore": "node ./tests/restoreDb.js"
+  },
+  "jest": {
+    "rootDir": "./tests/integration"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +39,7 @@
     "eslint-plugin-mocha": "^10.0.5",
     "eslint-plugin-sonarjs": "^0.13.0",
     "husky": "^8.0.1",
+    "jest": "^28.1.1",
     "mocha": "^10.0.0",
     "mysql-import": "^5.0.21",
     "nodemon": "^2.0.15",
