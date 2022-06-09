@@ -1,5 +1,9 @@
-CREATE DATABASE IF NOT EXISTS model_phonebook;
+DROP DATABASE IF EXISTS model_phonebook;
+
+CREATE DATABASE model_phonebook;
+
 USE model_phonebook;
+
 CREATE TABLE user (
 	id INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(30) NOT NULL,
