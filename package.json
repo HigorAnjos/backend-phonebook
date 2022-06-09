@@ -9,7 +9,8 @@
     "test:nyc": "nyc --all mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "lint": "eslint -c .eslintrc.json ."
+    "lint": "eslint -c .eslintrc.json .",
+    "restore": "node ./tests/restoreDb.js"
   },
   "keywords": [],
   "author": "",
@@ -35,8 +36,10 @@
     "eslint-plugin-sonarjs": "^0.13.0",
     "husky": "^8.0.1",
     "mocha": "^10.0.0",
+    "mysql-import": "^5.0.21",
     "nodemon": "^2.0.15",
     "nyc": "^15.1.0",
+    "pgtools": "^0.3.2",
     "sinon": "^14.0.0",
     "supertest": "^6.2.3"
   }
