@@ -1,9 +1,7 @@
-const connection = require('../connection');
+const { Phonebook } = require('../../database/models');
 
 const update = async (userId, name, phone, phoneId) => {
-  const query = 'UPDATE model_phonebook.phonebook SET name = ?, number = ? WHERE id = ? AND user_id = ?';
-
-  const [{ affectedRows }] = await connection.execute(query, [name, phone, phoneId, userId]);
+  const [affectedRows] = await Phonebook.update({ name, number: phone }, { where: { id: phoneId, user_id: userId } });
 
   return affectedRows;
 };
