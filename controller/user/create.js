@@ -10,7 +10,7 @@ const create = async (req, res) => {
   }
   // crypto password
   const passwordHash = await bcrypt.hash(password, 10);
-  console.log('passwordHash =>', passwordHash);
+
   // create user
   const isOk = await services.create(name, email, passwordHash);
 
