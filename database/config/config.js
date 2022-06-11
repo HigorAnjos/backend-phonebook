@@ -27,11 +27,17 @@ module.exports = {
     port: 3306,
   },
   production: {
-    username: 'root' || DB_USER,
-    password: null || DB_PASSWORD,
-    database: 'database_production' || DB_NAME,
-    host: '127.0.0.1' || DB_HOST,
-    dialect: 'mysql' || DB_DIALECT,
-    port: 3306 || DB_PORT,
+    username: DB_USER,
+    password: DB_PASSWORD,
+    database: DB_NAME,
+    host: DB_HOST,
+    dialect: DB_DIALECT,
+    port: DB_PORT,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
   },
 };
