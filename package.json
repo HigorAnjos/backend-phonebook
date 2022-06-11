@@ -46,6 +46,7 @@
     "nodemon": "^2.0.15",
     "nyc": "^15.1.0",
     "sequelize-cli": "^6.4.1",
+    "shelljs": "^0.8.5",
     "sinon": "^14.0.0",
     "supertest": "^6.2.3"
   }

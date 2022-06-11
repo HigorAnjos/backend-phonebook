@@ -1,29 +1,39 @@
 const supertest = require("supertest");
-const mysql = require("mysql2/promise");
-const restoreDb = require("../../restoreDb");
+const shell = require('shelljs');
+// const mysql = require("mysql2/promise");
 const server = require("../../../server");
 const request = supertest(server);
 require("dotenv").config();
 
+const { sequelize: sequelizeCli } = require('../assets/constants');
+
 describe('Verificar o login da rota user', () => {
-  let connection;
+  // let connection;
 
-  beforeEach(async () => {
-    const {  DB_USER, DB_PASS, DB_HOST } = process.env;
+  beforeEach(() => {
+    // const {  DB_USER, DB_PASS, DB_HOST } = process.env;
 
-    connection = mysql.createPool({
-      host: DB_HOST,
-      user: DB_USER,
-      password: DB_PASS,
-    });
+    // connection = mysql.createPool({
+    //   host: DB_HOST,
+    //   user: DB_USER,
+    //   password: DB_PASS,
+    // });
 
-    await restoreDb();
+    // await restoreDb();
+    shell.exec([
+      sequelizeCli.drop,
+      sequelizeCli.create,
+      sequelizeCli.migrate,
+      sequelizeCli.seed
+    ].join(' && '),
+      { silent: process.env.DEBUG === "false" });
   });
 
-  afterEach(async () => {
-    const {  DB_NAME } = process.env;
-    await connection.execute(`DROP DATABASE ${ DB_NAME }`);
-    await connection.end();
+  afterEach(() => {
+    // const {  DB_NAME } = process.env;
+    // await connection.execute(`DROP DATABASE ${ DB_NAME }`);
+    // await connection.end();
+    shell.exec([sequelizeCli.drop]);
   });
 
   it('Deve retornar um token de acesso', async () => {
