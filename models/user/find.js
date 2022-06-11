@@ -1,11 +1,10 @@
-const connection = require('../connection');
+const { Users } = require('../../database/models');
 
 const find = async (email) => {
-  const query = 'SELECT * FROM model_phonebook.user WHERE email = ?';
-
-  const [user] = await connection.execute(query, [email]);
-
+  const user = await Users.findOne({ where: { email } });
   return user;
 };
+
+find('george@gmail.com');
 
 module.exports = find;

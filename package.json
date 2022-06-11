@@ -12,7 +12,8 @@
     "dev": "nodemon index.js",
     "start": "node index.js",
     "lint": "eslint -c .eslintrc.json .",
-    "restore": "node ./tests/restoreDb.js"
+    "restore": "node ./tests/restoreDb.js",
+    "restart": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
   },
   "jest": {
     "rootDir": "./tests/integration"
@@ -28,7 +29,9 @@
     "express-async-errors": "^3.1.1",
     "express-rescue": "^1.1.31",
     "jsonwebtoken": "^8.5.1",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "pg": "^8.7.3",
+    "sequelize": "^6.20.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
@@ -44,6 +47,7 @@
     "mysql-import": "^5.0.21",
     "nodemon": "^2.0.15",
     "nyc": "^15.1.0",
+    "sequelize-cli": "^6.4.1",
     "sinon": "^14.0.0",
     "supertest": "^6.2.3"
   }

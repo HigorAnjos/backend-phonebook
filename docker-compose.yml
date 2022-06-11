@@ -19,7 +19,7 @@ services:
     working_dir: /app
     # Lista de volumes (diretórios) mapeados de fora para dentro do container
     volumes:
-      # Monta o diretório atual, com todos os dados do projeto, 
+      # Monta o diretório atual, com todos os dados do projeto,
       # dentro do diretório /app
       - ./:/app
     # Lista de serviços do qual este serviço depende
@@ -34,7 +34,7 @@ services:
     # Configura as variáveis de ambiente dentro do container
     environment:
       DB_USER: root
-      DB_PASS: password
+      DB_PASSWORD: password
       DB_NAME: model_phonebook
       DB_HOST: db # Nome do service logo abaixo
       PORT: '3001'
