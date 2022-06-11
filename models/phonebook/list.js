@@ -18,10 +18,8 @@ const serialize = (phonebook, userId) => ({
 
 const list = async (userId) => {
   const phonebook = await Phonebook.findAll({ where: { user_id: userId } });
-  
+
   return serialize(phonebook, userId);
 };
-
-list(1);
 
 module.exports = list;
