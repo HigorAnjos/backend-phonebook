@@ -34,7 +34,6 @@
     ```
 </details>
 
-<br>
 
 <details close>
   <summary>:point_right: Login usuario endpoint.</summary>
