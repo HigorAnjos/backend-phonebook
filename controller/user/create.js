@@ -4,9 +4,9 @@ const services = require('../../services/user/index');
 const create = async (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
-    return {
+    return res.status(400).json({
       error: 'Dados incompletos',
-    };
+    });
   }
   // crypto password
   const passwordHash = await bcrypt.hash(password, 10);
@@ -16,7 +16,7 @@ const create = async (req, res) => {
 
   if (!isOk) {
     return res.status(400).json({
-      error: 'Erro ao cria usuário',
+      error: 'Erro ao criar usuário',
     });
   }
 
