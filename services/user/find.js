@@ -7,7 +7,7 @@ const find = async (email) => {
     return null;
   }
 
-  return user;
+  return user.dataValues;
 };
 
 module.exports = find;
