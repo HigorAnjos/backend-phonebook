@@ -31,7 +31,7 @@ const login = async (req, res) => {
 
   const token = jwt.sign({ data: userWithoutPassword }, API_SECRET, JWT_CONFIG);
 
-  return res.status(200).json(token); // token
+  return res.status(200).json({ token }); // token
 };
 
 module.exports = login;
