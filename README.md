@@ -111,7 +111,7 @@
 
   - API deve responder com status http `400` e o seguinte `body`:
     ```json
-      { "error": "Erro ao criar usuário" }
+      { "error": "Não foi possivel cadastrar o numero" }
     ```
 </details>
 
