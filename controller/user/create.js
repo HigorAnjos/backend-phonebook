@@ -20,7 +20,7 @@ const create = async (req, res) => {
     });
   }
 
-  return res.status(200).json(isOk);
+  return res.status(201).json({ id: isOk });
 };
 
 module.exports = create;
