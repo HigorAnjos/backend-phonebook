@@ -7,6 +7,7 @@
 - O endpoint deve ser acessível através do caminho (`/user/create`);
 
   <br>
+  
   - A requisicao `POST /user/create` deve conter o seguinte `body`:
 
   ```json
@@ -29,7 +30,7 @@
 
   - API deve responder com status http `400` e o seguinte `body`:
     ```json
-      { "error": "Erro ao cria usuário" }
+      { "error": "Erro ao criar usuário" }
     ```
 </details>
 <br>
