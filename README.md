@@ -204,7 +204,7 @@
 </details>
 
 <details close>
-  <summary>:point_right: Listar todos os contato endpoint.</summary>
+  <summary>:point_right: Remover um contato endpoint.</summary>
 
   <br>
 
@@ -234,7 +234,7 @@
 </details>
 
 <details close>
-  <summary>:point_right: Buscar um contato endpoint.</summary>
+  <summary>:point_right: Atualizar um contato endpoint.</summary>
 
   <br>
 
