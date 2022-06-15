@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "afe4c52b-703b-43aa-81ba-3c0a633f4759",
+		"name": "API phonebook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13776241"
+	},
+	"item": [
+		{
+			"name": "user/",
+			"item": [
+				{
+					"name": "/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"george@gmail.com\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/user",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"higor\",\n    \"email\": \"higor@gmail.com\",\n    \"password\": \"123456\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/user/create",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "phonebook/",
+			"item": [
+				{
+					"name": "list/",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJuYW1lIjoiR2VvcmdlIiwiZW1haWwiOiJnZW9yZ2VAZ21haWwuY29tIn0sImlhdCI6MTY1NDI2NDc3NywiZXhwIjoxNjU0NDA4Nzc3fQ.3LZjdGrBBhGt5SvkiYoZ19RoN1jOUQkIMRVQa2YFg-M",
+								"description": "Token de autenticacao",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_base}}/phonebook/list",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"phonebook",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJuYW1lIjoiR2VvcmdlIiwiZW1haWwiOiJnZW9yZ2VAZ21haWwuY29tIn0sImlhdCI6MTY1NDI2NDc3NywiZXhwIjoxNjU0NDA4Nzc3fQ.3LZjdGrBBhGt5SvkiYoZ19RoN1jOUQkIMRVQa2YFg-M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_base}}/phonebook/find/5",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"phonebook",
+								"find",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/phonebook/create",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"phonebook",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update/:id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJuYW1lIjoiR2VvcmdlIiwiZW1haWwiOiJnZW9yZ2VAZ21haWwuY29tIn0sImlhdCI6MTY1NDI2NDc3NywiZXhwIjoxNjU0NDA4Nzc3fQ.3LZjdGrBBhGt5SvkiYoZ19RoN1jOUQkIMRVQa2YFg-M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"alguem Updated2\",\n    \"phone\": \"999659999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/phonebook/update/1",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"phonebook",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJuYW1lIjoiR2VvcmdlIiwiZW1haWwiOiJnZW9yZ2VAZ21haWwuY29tIn0sImlhdCI6MTY1NDI2NDc3NywiZXhwIjoxNjU0NDA4Nzc3fQ.3LZjdGrBBhGt5SvkiYoZ19RoN1jOUQkIMRVQa2YFg-M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_base}}/phonebook/delete/1",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"phonebook",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "health",
+			"item": [
+				{
+					"name": "hello",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
