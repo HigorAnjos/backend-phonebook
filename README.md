@@ -54,7 +54,7 @@
       }
   ```
 
-  > :heavy_check_mark: Caso sucesso retornara o id deste usuario.
+  > :heavy_check_mark: Caso sucesso retornara o token para este usuario.
   - API deve responder com status http `200` e o seguinte `body`:
     ```json
       {
@@ -91,7 +91,7 @@
     }
   ```
 
-  > :heavy_check_mark: Caso sucesso retornara o id deste usuario.
+  > :heavy_check_mark: Caso sucesso retornara lista de contatos deste usuario.
   - API deve responder com status http `200` e o seguinte `body`:
     ```json
       {
@@ -116,7 +116,7 @@
         ]
       }
     ```
-    
+
 </details>
 
 <details close>
@@ -147,7 +147,7 @@
       }
   ```
 
-  > :heavy_check_mark: Caso sucesso retornara o id deste usuario.
+  > :heavy_check_mark: Caso sucesso retornara o id deste contato.
   - API deve responder com status http `201` e o seguinte `body`:
     ```json
       {
@@ -181,7 +181,7 @@
   ```
 
 
-  > :heavy_check_mark: Caso sucesso retornara o id deste usuario.
+  > :heavy_check_mark: Caso sucesso retornara o contato.
   - API deve responder com status http `200` e o seguinte `body`:
     ```json
       {
@@ -229,7 +229,7 @@
       }
   ```
 
-  > :heavy_check_mark: Caso sucesso retornara o id deste usuario.
+  > :heavy_check_mark: Caso sucesso.
   - API deve responder com status http `200` e o seguinte `body`:
     ```json
       {
@@ -262,9 +262,10 @@
     }
   ```
 
-  > :heavy_check_mark: Caso sucesso retornara o id deste usuario.
+  > :heavy_check_mark: Caso sucesso.
   - API deve responder com status http `200`.
 
+  <br>
 
   > :x: Por algum motivo nao seja possivel.
 
