@@ -158,4 +158,50 @@
     ```
 </details>
 
+<details close>
+  <summary>:point_right: Listar todos os contato endpoint.</summary>
+
+  <br>
+
+- O endpoint deve ser acessível através do caminho (`/phonebook/list`);
+
+  - A requisicao `GET /phonebook/list` deve conter o seguinte `headers` com o token de login:
+
+  <br>
+
+  ```json
+    {
+      "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+    }
+  ```
+
+
+  > :heavy_check_mark: Caso sucesso retornara o id deste usuario.
+  - API deve responder com status http `200` e o seguinte `body`:
+    ```json
+      {
+          "userId": 1,
+          "phonebook": [
+            {
+              "id": 1,
+              "name": "alguem",
+              "phone": "+380967891234",
+              "createdAt": "2022-06-15T04:36:40.000Z",
+              "updatedAt": "2022-06-15T04:36:40.000Z",
+              "user_id": 1
+          },
+          {
+              "id": 5,
+              "name": "pablo",
+              "phone": "+38094654651",
+              "createdAt": "2022-06-15T04:36:40.000Z",
+              "updatedAt": "2022-06-15T04:36:40.000Z",
+              "user_id": 1
+          }
+        ]
+      }
+    ```
+
+</details>
+
 [backend Heroko](https://aqueous-hollows-23591.herokuapp.com/)
