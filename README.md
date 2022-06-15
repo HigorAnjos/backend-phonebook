@@ -2,7 +2,7 @@
 
 
 <details close>
-  <summary>:point_right: Crie um novo usuario endpoint `POST /user/create`.</summary>
+  <summary>:point_right: Crie um novo usuario endpoint `POST /user/create` .</summary>
 
 - O endpoint deve ser acessível através do caminho (`/user/create`);
 
