@@ -76,11 +76,14 @@
 
 <details close>
   <summary>:point_right: Crie um novo contato endpoint.</summary>
+
   <br>
 
 - O endpoint deve ser acessível através do caminho (`/phonebook/create`);
 
   - A requisicao `POST /phonebook/create` deve conter o seguinte `headers` com o token de login:
+
+  <br>
 
   ```json
     {
@@ -112,6 +115,46 @@
   - API deve responder com status http `400` e o seguinte `body`:
     ```json
       { "error": "Não foi possivel cadastrar o numero" }
+    ```
+</details>
+
+
+<details close>
+  <summary>:point_right: Buscar um contato endpoint.</summary>
+
+  <br>
+
+- O endpoint deve ser acessível através do caminho (`/phonebook/find/:id`);
+
+  - A requisicao `GET /phonebook/find/:id` deve conter o seguinte `headers` com o token de login:
+
+  <br>
+
+  ```json
+    {
+      "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+    }
+  ```
+
+
+  > :heavy_check_mark: Caso sucesso retornara o id deste usuario.
+  - API deve responder com status http `200` e o seguinte `body`:
+    ```json
+      {
+        "userId": 1,
+        "contact": {
+            "id": 5,
+            "name": "pablo",
+            "phone": "+38094654651"
+          }
+      }
+    ```
+
+  > :x: Por algum motivo nao seja possivel.
+
+  - API deve responder com status http `404` e o seguinte `body`:
+    ```json
+      { "message": "Contato não encontrado" }
     ```
 </details>
 
