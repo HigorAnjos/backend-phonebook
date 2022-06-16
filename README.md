@@ -325,7 +325,7 @@
 </details>
 
 <details close>
-  <summary>:point_right: Remover um contato endpoint.</summary>
+  <summary>:point_right: Deletar um contato endpoint.</summary>
 
   <br>
 
