@@ -5,6 +5,12 @@ const update = async (req, res) => {
   const { id: userId } = req.user;
   const { name, email, password } = req.body;
 
+  if (!name || !email || !password) {
+    return res.status(400).json({
+      error: 'Dados incompletos para atualizar',
+    });
+  }
+
   const passwordHash = await bcrypt.hash(password, 5);
 
   const userUpdated = await services.update(name, email, passwordHash, userId);
