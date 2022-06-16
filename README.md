@@ -3,7 +3,7 @@
 ## `user/`
 
 <details close>
-  <summary>:point_right: Crie um novo usuario endpoint.</summary>
+  <summary>:point_right: Criar um novo usuario endpoint.</summary>
   <br>
 
 - O endpoint deve ser acessível através do caminho (`/user/create`);
@@ -199,7 +199,7 @@
 </details>
 
 <details close>
-  <summary>:point_right: Crie um novo contato endpoint.</summary>
+  <summary>:point_right: Criar um novo contato endpoint.</summary>
 
   <br>
 
