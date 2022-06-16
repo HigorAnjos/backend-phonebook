@@ -1,0 +1,16 @@
+const models = require('../../models/user/index');
+const find = require('./find');
+
+const update = async (name, email, password, userId) => {
+  const userHasTheSameEmailFound = await find(email);
+
+  if (userHasTheSameEmailFound && userId !== userHasTheSameEmailFound.id) {
+    return 0; // email ja cadastrado
+  }
+
+  const affectedRows = await models.update(name, email, password, userId);
+
+  return affectedRows;
+};
+
+module.exports = update;
