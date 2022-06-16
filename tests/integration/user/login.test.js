@@ -43,4 +43,32 @@ describe('Rota user login', () => {
     expect(response.body).toHaveProperty("error");
   });
 
+  it('Nao deve ser possivel logar sem informar email', async () => {
+
+    const user = {
+      email: "",
+      password: "1234",
+    };
+
+    const response = await request.post("/user/").send(user);
+
+    expect(response.status).toBe(400);
+    expect(response.body).toHaveProperty("error");
+    expect(response.body.error).toBe("Dados incompletos");
+  });
+
+  it('Nao deve ser possivel logar sem informar senha', async () => {
+
+    const user = {
+      email: "higorc.anjos@gmail.com",
+      password: "",
+    };
+
+    const response = await request.post("/user/").send(user);
+
+    expect(response.status).toBe(400);
+    expect(response.body).toHaveProperty("error");
+    expect(response.body.error).toBe("Dados incompletos");
+  });
+
 });

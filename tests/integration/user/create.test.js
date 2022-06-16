@@ -63,4 +63,16 @@ describe('Rota user create', () => {
     expect(response.status).toBe(400);
     expect(response.body).toHaveProperty('error');
   });
+
+  it('Nao deve ser possivel criar um usuario com email ja cadastrado', async () => {
+    const newUser = {
+      name: 'higor anjos',
+      email: 'higorc.anjos@gmail.com'
+    }
+
+    const response = await request.post('/user/create').send(newUser);
+
+    expect(response.status).toBe(400);
+    expect(response.body).toHaveProperty('error');
+  });
 });
