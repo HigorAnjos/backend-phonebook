@@ -1,6 +1,6 @@
 <h1 align="center">:fleur_de_lis: backend-phonebook</h1>
 
-<p align="center">Esse projeto e uma agenda telefonica. :open_book:</p>
+<p align="center">Esse projeto e uma API de uma agenda telefonica. :open_book:</p>
 
 <p align="center">
   <a href="#Heroku">Heroku</a> •
@@ -9,10 +9,6 @@
   <a href="#Autor">Autor</a>
 </p>
 
-## Heroku
-
-O projeto esta disponivel online no
-[Heroko :smile:](https://aqueous-hollows-23591.herokuapp.com/)
 
 ## `user/`
 
@@ -368,6 +364,11 @@ O projeto esta disponivel online no
     ```
 
 </details>
+
+## Heroku
+
+O projeto esta disponivel online no
+[Heroko :smile:](https://aqueous-hollows-23591.herokuapp.com/)
 
 ## Postman
 Download os endpoints
