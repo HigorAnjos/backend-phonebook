@@ -1,4 +1,4 @@
-# :fleur_de_lis: backend-phonebook
+<h1 align="center">:fleur_de_lis: backend-phonebook</h1>
 
 ## `user/`
 
