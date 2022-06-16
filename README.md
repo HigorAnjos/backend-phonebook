@@ -209,7 +209,7 @@
 
 - O endpoint deve ser acessível através do caminho (`/phonebook/update/:id`);
 
-  - A requisicao `GET /phonebook/update/:id` deve conter o seguinte `headers` com o token de login:
+  - A requisicao `PUT /phonebook/update/:id` deve conter o seguinte `headers` com o token de login:
 
   <br>
 
@@ -218,7 +218,7 @@
       "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
     }
   ```
- - A requisicao `POST /phonebook/update/:id` deve conter o seguinte `body`:
+ - A requisicao `PUT /phonebook/update/:id` deve conter o seguinte `body`:
 
   <br>
 
@@ -252,7 +252,7 @@
 
 - O endpoint deve ser acessível através do caminho (`/phonebook/delete/:id`);
 
-  - A requisicao `GET /phonebook/delete/:id` deve conter o seguinte `headers` com o token de login:
+  - A requisicao `DELETE /phonebook/delete/:id` deve conter o seguinte `headers` com o token de login:
 
   <br>
 
