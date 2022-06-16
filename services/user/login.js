@@ -10,7 +10,6 @@ const login = async (email, userInsertedPassword) => {
   }
 
   const isCorret = await bcrypt.compare(userInsertedPassword, userFound.password);
-  // console.log('is=> ', isCorret);
   if (!isCorret) {
     return false;
   }

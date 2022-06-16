@@ -1,6 +1,5 @@
 const supertest = require("supertest");
 const shell = require('shelljs');
-// const mysql = require("mysql2/promise");
 const server = require("../../../server");
 const request = supertest(server);
 require("dotenv").config();

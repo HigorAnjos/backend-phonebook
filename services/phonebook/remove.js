@@ -1,9 +1,5 @@
 const model = require('../../models/phonebook/index');
 
-const remove = async (userId, phoneId) => {
-  const affectedRows = await model.remove(userId, phoneId);
-
-  return affectedRows;
-};
+const remove = (userId, phoneId) => model.remove(userId, phoneId);
 
 module.exports = remove;

@@ -8,9 +8,7 @@ const update = async (name, email, password, userId) => {
     return 0; // email ja cadastrado
   }
 
-  const affectedRows = await models.update(name, email, password, userId);
-
-  return affectedRows;
+  return models.update(name, email, password, userId);;
 };
 
 module.exports = update;
