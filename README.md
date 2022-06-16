@@ -1,5 +1,19 @@
 <h1 align="center">:fleur_de_lis: backend-phonebook</h1>
 
+<p align="center">Esse projeto e uma agenda telefonica. :open_book:</p>
+
+<p align="center">
+  <a href="#Heroku">Heroku</a> •
+  <a href="#Postman">Postman</a> •
+  <a href="#Tecnologias">Tecnologias</a> •
+  <a href="#Autor">Autor</a>
+</p>
+
+## Heroku
+
+O projeto esta disponivel online no
+[Heroko :smile:](https://aqueous-hollows-23591.herokuapp.com/)
+
 ## `user/`
 
 <details close>
@@ -355,4 +369,25 @@
 
 </details>
 
-[backend Heroko](https://aqueous-hollows-23591.herokuapp.com/)
+## Postman
+Download os endpoints
+
+## Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Eslint](https://eslint.org/)
+- [Java Script](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [Editor Config](https://editorconfig.org/)
+
+
+# Autor
+
+<img alt="Higor Anjos" title="Higor Anjos" src="https://avatars.githubusercontent.com/u/38214470?v=4" height="100" width="100" />
+
+Made with 💜 by Higor Anjos 👋
+
+[![LinkedIn Badge](https://img.shields.io/badge/-Higor_Anjos-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/higoranjos)](https://www.linkedin.com/in/higoranjos)
+
