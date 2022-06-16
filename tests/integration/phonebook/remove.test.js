@@ -27,8 +27,6 @@ describe('Rota Phonebook delete', () => {
 
     const response = await request.delete('/phonebook/delete/1').set('authorization', token);
 
-    console.log('Delete response.body =>', response.body);
-
     expect(response.status).toBe(200);
 
     const responseFind = await request.get('/phonebook/find/1').set('authorization', token);

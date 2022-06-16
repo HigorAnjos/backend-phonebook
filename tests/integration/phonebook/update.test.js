@@ -14,7 +14,7 @@ shell.exec([
 ].join(' && '),
   { silent: process.env.DEBUG === "false" });
 
-describe.only('Rota Phonebook update', () => {
+describe('Rota Phonebook update', () => {
 
   it('E possivel deletar um contato com sucesso', async () => {
 
@@ -31,8 +31,6 @@ describe.only('Rota Phonebook update', () => {
     const { body: { token } } = await request.post('/user').send(user);
 
     const response = await request.put('/phonebook/update/5').set('authorization', token).send(contactUpdate);
-
-    console.log('responde.body=>', response.body)
 
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty('message');

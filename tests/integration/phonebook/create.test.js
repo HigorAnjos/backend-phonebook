@@ -31,8 +31,6 @@ describe('Rota Phonebook create', () => {
 
     const response = await request.post('/phonebook/create').set('authorization', token).send(newContact);
 
-    console.log('response.body', response.body);
-
     expect(response.status).toBe(201);
     expect(response.body).toHaveProperty('id');
   });
