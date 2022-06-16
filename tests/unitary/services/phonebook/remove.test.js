@@ -1,5 +1,5 @@
-const models = require('../../../models/phonebook')
-const services = require('../../../services/phonebook')
+const models = require('../../../../models/phonebook')
+const services = require('../../../../services/phonebook')
 const sinon = require('sinon');
 const { expect } = require('chai');
 

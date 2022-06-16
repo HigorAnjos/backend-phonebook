@@ -1,5 +1,5 @@
-const phoneController = require('../../../controller/phonebook/');
-const services = require('../../../services/phonebook');
+const phoneController = require('../../../../controller/phonebook/');
+const services = require('../../../../services/phonebook');
 const sinon = require('sinon');
 const { expect } = require('chai');
 

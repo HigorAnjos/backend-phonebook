@@ -1,7 +1,7 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
-const services = require('../../../services/user');
-const models = require('../../../models/user');
+const services = require('../../../../services/user');
+const models = require('../../../../models/user');
 
 describe('Testando a services user create quando sucesso', () => {
   const insertId = 5;

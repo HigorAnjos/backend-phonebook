@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 const jwt = require('jsonwebtoken');
 
-const auth = require('../../middlewares/auth');
+const auth = require('../../../middlewares/auth');
 
 describe('Rota phonebook Nao deve permitir acesso sem autorizacao a rota list', function () {
   const response = {};

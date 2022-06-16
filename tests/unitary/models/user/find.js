@@ -1,4 +1,4 @@
-const models = require('../../../models/user');
+const models = require('../../../../models/user');
 const sinon = require('sinon');
 const { expect } = require('chai');
 const connection = require('../../../models/connection');

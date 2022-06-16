@@ -1,7 +1,7 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
-const services = require('../../../services/user');
-const models = require('../../../models/user');
+const services = require('../../../../services/user');
+const models = require('../../../../models/user');
 const bcrypt = require('bcrypt');
 const { afterEach } = require('mocha');
 
@@ -27,7 +27,7 @@ describe('Testando o serviço de login quando sucesso', () => {
   });
 });
 
-describe.only('Testando o serviço de login quando falha', () => {
+describe('Testando o serviço de login quando falha', () => {
 
   afterEach(() => {
     services.find.restore();

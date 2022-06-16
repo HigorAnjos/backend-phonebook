@@ -1,7 +1,6 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
-const connection = require('../../../models/connection');
-const models = require('../../../models/phonebook/index');
+const models = require('../../../../models/phonebook/index');
 
 describe('Testando models create quando sucesso', () => {
   const userId = 1;
