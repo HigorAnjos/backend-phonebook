@@ -9,7 +9,20 @@ const user = require('./user');
 
 const root = express.Router({ mergeParams: true });
 
+/**
+ * @swagger
+ *  tags:
+ *    name: Phonebook
+ *    description: Rotas para contatos
+ */
 root.use('/phonebook', phonebook);
+
+/**
+ * @swagger
+ *  tags:
+ *    name: User
+ *    description: Rotas de usuario
+ */
 root.use('/user', user);
 
 const swaggerDoc = swaggerJSDoc(swaggerConfig);
