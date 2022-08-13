@@ -235,10 +235,10 @@ router.delete('/delete/:id', auth, remove);
  *             schema:
  *             type: object
  *             properties:
- *               error:
+ *               message:
  *                 type: string
  *             example:
- *               error: Não foi possivel remover o numero
+ *               message: Não foi possivel remover o numero
  *
  */
 
