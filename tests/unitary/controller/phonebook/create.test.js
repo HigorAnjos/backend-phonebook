@@ -63,6 +63,6 @@ describe('Testando controller create quando nao sucesso', () => {
 
     expect(res.status.calledWith(400)).to.be.true;
     expect(res.status.args[0][0]).to.be.equal(400);
-    expect(res.json.calledWith({ error: 'Não foi possivel cadastrar o numero' })).to.be.true;
+    expect(res.json.calledWith({ message: 'Não foi possivel cadastrar o numero' })).to.be.true;
   });
 });
