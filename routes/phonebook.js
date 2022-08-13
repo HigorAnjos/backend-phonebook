@@ -134,10 +134,10 @@ router.post('/create', auth, create);
  *             schema:
  *             type: object
  *             properties:
- *               error:
+ *               message:
  *                 type: string
  *             example:
- *               error: Não foi possivel cadastrar o numero
+ *               message: Não foi possivel cadastrar o numero
  *
  */
 

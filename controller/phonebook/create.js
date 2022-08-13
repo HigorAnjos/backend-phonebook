@@ -7,7 +7,7 @@ const create = async (req, res) => {
   const isOk = await services.create(name, phone, id);
 
   if (!isOk) {
-    return res.status(400).json({ error: 'Não foi possivel cadastrar o numero' });
+    return res.status(400).json({ message: 'Não foi possivel cadastrar o numero' });
   }
 
   return res.status(201).json({ id: isOk });
