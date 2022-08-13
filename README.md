@@ -42,7 +42,7 @@
 
   - API deve responder com status http `400` e o seguinte `body`:
     ```json
-      { "error": "Erro ao criar usuário" }
+      { "message": "Erro ao criar usuário" }
     ```
 </details>
 
@@ -53,7 +53,7 @@
 
 - O endpoint deve ser acessível através do caminho (`/user/`);
 
-  - A requisicao `POST /user/` deve conter o seguinte `body`:
+  - A requisicao `POST /user/login` deve conter o seguinte `body`:
 
   <br>
 
@@ -76,7 +76,7 @@
 
   - API deve responder com status http `400` e o seguinte `body`:
     ```json
-      { "error": "Senha ou email incorretos" }
+      { "message": "Senha ou email incorretos" }
     ```
 </details>
 
@@ -121,7 +121,7 @@
 
   - API deve responder com status http `400` e o seguinte `body`:
     ```json
-      { "error": "Não foi possivel atualizar o usuário" }
+      { "message": "Não foi possivel atualizar o usuário" }
     ```
 </details>
 
@@ -155,7 +155,7 @@
 
   - API deve responder com status http `400` e o seguinte `body`:
     ```json
-      { "error": "Não foi possivel remover o usuário" }
+      { "message": "Não foi possivel remover o usuário" }
     ```
 </details>
 
@@ -248,7 +248,7 @@
 
   - API deve responder com status http `400` e o seguinte `body`:
     ```json
-      { "error": "Não foi possivel cadastrar o numero" }
+      { "message": "Não foi possivel cadastrar o numero" }
     ```
 </details>
 
@@ -330,7 +330,7 @@
 
   - API deve responder com status http `400` e o seguinte `body`:
     ```json
-      { "error": "Não foi possivel atualizar o numero" }
+      { "message": "Não foi possivel atualizar o numero" }
     ```
 </details>
 
@@ -360,7 +360,7 @@
 
   - API deve responder com status http `400` e o seguinte `body`:
     ```json
-      { "error": "Não foi possivel remover o numero" }
+      { "message": "Não foi possivel remover o numero" }
     ```
 
 </details>
