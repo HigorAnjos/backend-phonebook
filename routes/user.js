@@ -9,7 +9,7 @@ const router = express.Router({ mergeParams: true });
  *  /user:
  *   post:
  *     tags: [User]
- *     description: Login de usuario
+ *     description: Login usuario
  *     requestBody:
  *       required: true
  *       content:
@@ -35,6 +35,16 @@ const router = express.Router({ mergeParams: true });
  *                   type: string
  *               example:
  *                  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+ *       400:
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *               example:
+ *                  error: Senha ou email incorretos
  *
  */
 router.post('/', login);
@@ -113,9 +123,51 @@ router.post('/create', create);
  *                   type: string
  *               example:
  *                  message: Usuário atualizado com sucesso
+ *       400:
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *               example:
+ *                  error: Não foi possivel atualizar o usuário
  *
  */
 router.put('/update', auth, update);
+
+/**
+ * @swagger
+ *  /user/delete:
+ *   delete:
+ *     tags: [User]
+ *     description: Deleta um usuario
+ *     security:
+ *      - bearerAuth: []
+ *     responses:
+ *       200:
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *               example:
+ *                  message: Usuário removido com sucesso
+ *       400:
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *               example:
+ *                  error: Não foi possivel remover o usuário
+ *
+ */
 router.delete('/delete', auth, remove);
 
 module.exports = router;
