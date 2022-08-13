@@ -11,6 +11,11 @@
 </p>
 
 
+## Heroku
+
+O projeto esta disponivel online no
+[Heroko :smile:](https://backend-phonebook-2930.herokuapp.com/)
+
 ## Swagger
 
 A documentacao da api esta disponivel online
@@ -371,11 +376,6 @@ A documentacao da api esta disponivel online
     ```
 
 </details>
-
-## Heroku
-
-O projeto esta disponivel online no
-[Heroko :smile:](https://backend-phonebook-2930.herokuapp.com/)
 
 ## Postman
 Download dos [endpoints](https://github.com/HigorAnjos/backend-phonebook/blob/main/API.postman_collection.json)
