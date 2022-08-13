@@ -44,6 +44,45 @@ const router = express.Router({ mergeParams: true });
  *
  */
 router.get('/list', auth, list);
+
+/**
+ * @swagger
+ *  /phonebook/find/{id}:
+ *   get:
+ *     tags: [Phonebook]
+ *     description: Buscar um contato
+ *     parameters:
+ *        - in: path
+ *          name: id
+ *          type: integer
+ *          required: true
+ *     example:
+ *        id: 2
+ *     security:
+ *      - bearerAuth: []
+ *     responses:
+ *       200:
+ *         content:
+ *           application/json:
+ *             schema:
+ *             type: object
+ *             properties:
+ *               userId:
+ *                 type: integer
+ *               contact:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer
+ *                   name:
+ *                     type: string
+ *                   phone:
+ *                     type: string
+ *             example:
+ *               userId: 1
+ *               contact: { "id": 1, "name": "alguem","phone": "+380967891234" }
+ *
+ */
 router.get('/find/:id', auth, find);
 router.post('/create', auth, create);
 router.put('/update/:id', auth, update);
