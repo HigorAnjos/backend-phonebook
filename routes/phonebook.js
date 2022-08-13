@@ -1,6 +1,6 @@
 const express = require('express');
-const auth = require('../../middlewares/auth');
-const { list, find, create, update, remove } = require('./index');
+const auth = require('../middlewares/auth');
+const { list, find, create, update, remove } = require('../controller/phonebook');
 
 const router = express.Router({ mergeParams: true });
 

@@ -1,7 +1,7 @@
 const express = require('express');
 require('express-async-errors');
-const phonebook = require('./phonebook/router');
-const user = require('./user/router');
+const phonebook = require('./phonebook');
+const user = require('./user');
 
 const root = express.Router({ mergeParams: true });
 
