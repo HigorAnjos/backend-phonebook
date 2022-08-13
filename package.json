@@ -30,7 +30,9 @@
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "pg": "^8.7.3",
-    "sequelize": "^6.20.1"
+    "sequelize": "^6.20.1",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.5.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
