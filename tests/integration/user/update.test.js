@@ -29,7 +29,7 @@ describe('Rota user update', () => {
         password: '1234',
       }
 
-      const { body: { token } } = await request.post('/user').send(userLogin);
+      const { body: { token } } = await request.post('/user/login').send(userLogin);
 
       const response = await request.put('/user/update/').set('authorization', token).send(userUpdate);
 
@@ -42,7 +42,7 @@ describe('Rota user update', () => {
         password: '1234',
       }
 
-      const res = await request.post('/user').send(userUpdated);
+      const res = await request.post('/user/login').send(userUpdated);
 
       expect(res.status).toBe(200);
       expect(res.body).toHaveProperty('token');
@@ -61,13 +61,13 @@ describe('Rota user update', () => {
         password: '1234',
       };
 
-      const { body: { token } } = await request.post('/user').send(userLogin);
+      const { body: { token } } = await request.post('/user/login').send(userLogin);
 
       const response = await request.put('/user/update/').set('authorization', token).send(userUpdate);
 
       expect(response.status).toBe(400);
-      expect(response.body).toHaveProperty('error');
-      expect(response.body.error).toBe('Não foi possivel atualizar o usuário');
+      expect(response.body).toHaveProperty('message');
+      expect(response.body.message).toBe('Não foi possivel atualizar o usuário');
     });
 
     it('Nao deve ser possivel atulizar sem informar o email', async () => {
@@ -81,12 +81,12 @@ describe('Rota user update', () => {
         password: '1234',
       };
 
-      const { body: { token } } = await request.post('/user').send(userLogin);
+      const { body: { token } } = await request.post('/user/login').send(userLogin);
 
       const response = await request.put('/user/update/').set('authorization', token).send(userUpdate);
 
       expect(response.status).toBe(400);
-      expect(response.body).toHaveProperty('error');
-      expect(response.body.error).toBe('Dados incompletos para atualizar');
+      expect(response.body).toHaveProperty('message');
+      expect(response.body.message).toBe('Dados incompletos para atualizar');
     });
 });

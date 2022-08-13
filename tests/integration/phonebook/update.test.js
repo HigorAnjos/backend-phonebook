@@ -28,7 +28,7 @@ describe('Rota Phonebook update', () => {
       phone: '+5511985145589'
     }
 
-    const { body: { token } } = await request.post('/user').send(user);
+    const { body: { token } } = await request.post('/user/login').send(user);
 
     const response = await request.put('/phonebook/update/5').set('authorization', token).send(contactUpdate);
 

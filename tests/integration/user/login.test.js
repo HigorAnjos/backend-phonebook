@@ -39,7 +39,7 @@ describe('Rota user login', () => {
     const response = await request.post("/user/login").send(user);
 
     expect(response.status).toBe(400);
-    expect(response.body).toHaveProperty("error");
+    expect(response.body).toHaveProperty("message");
   });
 
   it('Nao deve ser possivel logar sem informar email', async () => {
@@ -52,8 +52,8 @@ describe('Rota user login', () => {
     const response = await request.post("/user/login").send(user);
 
     expect(response.status).toBe(400);
-    expect(response.body).toHaveProperty("error");
-    expect(response.body.error).toBe("Dados incompletos");
+    expect(response.body).toHaveProperty("message");
+    expect(response.body.message).toBe("Dados incompletos");
   });
 
   it('Nao deve ser possivel logar sem informar senha', async () => {
@@ -66,8 +66,8 @@ describe('Rota user login', () => {
     const response = await request.post("/user/login").send(user);
 
     expect(response.status).toBe(400);
-    expect(response.body).toHaveProperty("error");
-    expect(response.body.error).toBe("Dados incompletos");
+    expect(response.body).toHaveProperty("message");
+    expect(response.body.message).toBe("Dados incompletos");
   });
 
 });

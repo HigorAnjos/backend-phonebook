@@ -23,7 +23,7 @@ describe('Rota Phonebook find', () => {
       password: "1234",
     };
 
-    const { body: { token } } = await request.post('/user').send(user);
+    const { body: { token } } = await request.post('/user/login').send(user);
 
     const response = await request.get('/phonebook/find/5').set('authorization', token);
 

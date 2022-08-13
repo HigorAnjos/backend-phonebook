@@ -27,7 +27,7 @@ describe('Rota Phonebook create', () => {
       password: "1234",
     };
 
-    const { body: { token } } = await request.post('/user').send(user);
+    const { body: { token } } = await request.post('/user/login').send(user);
 
     const response = await request.post('/phonebook/create').set('authorization', token).send(newContact);
 

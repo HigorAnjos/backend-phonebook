@@ -23,7 +23,7 @@ describe('Rota Phonebook delete', () => {
       password: "1234",
     };
 
-    const { body: { token } } = await request.post('/user').send(user);
+    const { body: { token } } = await request.post('/user/login').send(user);
 
     const response = await request.delete('/phonebook/delete/1').set('authorization', token);
 

@@ -23,7 +23,7 @@ describe('Rota user Delete', () => {
       password: '1234',
     };
 
-    const { body: { token } } = await request.post('/user').send(userLogin);
+    const { body: { token } } = await request.post('/user/login').send(userLogin);
 
     const response = await request.delete('/user/delete/').set('authorization', token);
 
@@ -36,10 +36,10 @@ describe('Rota user Delete', () => {
       password: '1234',
     };
 
-    const res = await request.post('/user').send(userDeleted);
+    const res = await request.post('/user/login').send(userDeleted);
 
     expect(res.status).toBe(400);
-    expect(res.body).toHaveProperty('error');
-    expect(res.body.error).toBe('Senha ou email incorretos');
+    expect(res.body).toHaveProperty('message');
+    expect(res.body.message).toBe('Senha ou email incorretos');
   });
 });

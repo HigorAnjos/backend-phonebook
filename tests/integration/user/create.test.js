@@ -35,10 +35,12 @@ describe('Rota user create', () => {
       password: '123456'
     }
 
+    console.log("BODY*************")
+
     const response = await request.post('/user/create').send(newUser);
 
     expect(response.status).toBe(400);
-    expect(response.body).toHaveProperty('error');
+    expect(response.body).toHaveProperty('message');
   });
 
   it('Nao deve ser possivel criar um usuario sem nome', async () => {
@@ -49,7 +51,7 @@ describe('Rota user create', () => {
     const response = await request.post('/user/create').send(newUser);
 
     expect(response.status).toBe(400);
-    expect(response.body).toHaveProperty('error');
+    expect(response.body).toHaveProperty('message');
   });
 
   it('Nao deve ser possivel criar um usuario sem senha', async () => {
@@ -61,7 +63,7 @@ describe('Rota user create', () => {
     const response = await request.post('/user/create').send(newUser);
 
     expect(response.status).toBe(400);
-    expect(response.body).toHaveProperty('error');
+    expect(response.body).toHaveProperty('message');
   });
 
   it('Nao deve ser possivel criar um usuario com email ja cadastrado', async () => {
@@ -73,6 +75,6 @@ describe('Rota user create', () => {
     const response = await request.post('/user/create').send(newUser);
 
     expect(response.status).toBe(400);
-    expect(response.body).toHaveProperty('error');
+    expect(response.body).toHaveProperty('message');
   });
 });
