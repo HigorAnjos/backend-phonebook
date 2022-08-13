@@ -6,7 +6,7 @@ const router = express.Router({ mergeParams: true });
 
 /**
  * @swagger
- *  /user:
+ *  /user/login:
  *   post:
  *     tags: [User]
  *     description: Login usuario
@@ -47,7 +47,7 @@ const router = express.Router({ mergeParams: true });
  *                  error: Senha ou email incorretos
  *
  */
-router.post('/', login);
+router.post('/login', login);
 
 /**
  * @swagger
