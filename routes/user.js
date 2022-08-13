@@ -23,7 +23,7 @@ router.post('/login', login);
  *               password:
  *                 type: string
  *             example:
- *              email: higorc.anjos@gmail.com
+ *              email: docs@api.com
  *              password: "123456"
  *     responses:
  *       200:
