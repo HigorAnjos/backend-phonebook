@@ -19,7 +19,7 @@ O projeto esta disponivel online no
 ## Swagger
 
 A documentacao da api esta disponivel online
-[Swagger :smile:](https://backend-phonebook-2930.herokuapp.com/docs)
+[Swagger :page_with_curl:](https://backend-phonebook-2930.herokuapp.com/docs)
 
 
 ## `user/`
