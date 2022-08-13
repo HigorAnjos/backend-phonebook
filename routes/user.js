@@ -77,6 +77,44 @@ router.post('/', login);
  */
 router.post('/create', create);
 
+/**
+ * @swagger
+ *  /user/update:
+ *   put:
+ *     tags: [User]
+ *     description: Atualiza dados do usuario
+ *     security:
+ *      - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *             example:
+ *              name: higor anjos
+ *              email: higorc.anjos@gmail.com
+ *              password: "123456"
+ *     responses:
+ *       200:
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *               example:
+ *                  message: Usuário atualizado com sucesso
+ *
+ */
 router.put('/update', auth, update);
 router.delete('/delete', auth, remove);
 
