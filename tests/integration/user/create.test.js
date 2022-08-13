@@ -35,8 +35,6 @@ describe('Rota user create', () => {
       password: '123456'
     }
 
-    console.log("BODY*************")
-
     const response = await request.post('/user/create').send(newUser);
 
     expect(response.status).toBe(400);

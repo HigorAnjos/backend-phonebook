@@ -3,7 +3,6 @@ const { expect } = require('chai');
 const services = require('../../../../services/user');
 const models = require('../../../../models/user');
 const bcrypt = require('bcrypt');
-const { afterEach } = require('mocha');
 
 describe('Testando o serviço de login quando sucesso', () => {
   const MOC = {
@@ -34,15 +33,10 @@ describe('Testando o serviço de login quando sucesso', () => {
 
 describe('Testando o serviço de login quando falha', () => {
 
-  afterEach(() => {
-    services.find.restore();
-    bcrypt.compare.restore();
-  });
-
   it('Deve retornar false caso nao encontre o usuario', async () => {
     const MOC = null;
     const isPasswordCorrect = true;
-    sinon.stub(services, 'find').resolves(MOC);
+    sinon.stub(models, 'find').resolves(MOC);
     sinon.stub(bcrypt, 'compare').resolves(isPasswordCorrect);
 
     const email = 'test@gmail.com';
@@ -50,12 +44,15 @@ describe('Testando o serviço de login quando falha', () => {
     const result = await services.login(email);
 
     expect(result).to.be.equal(false);
+
+    models.find.restore();
+    bcrypt.compare.restore();
   });
 
   it('Deve retornar false caso a senha esteja incorreta ---', async () => {
     const isPasswordCorrect = false;
-    const userFound = true;
-    sinon.stub(services, 'find').resolves('userFound');
+    const userFound = { dataValues: true };
+    sinon.stub(models, 'find').resolves(userFound);
     sinon.stub(bcrypt, 'compare').resolves(isPasswordCorrect);
 
     const email = 'test@gmail.com';
@@ -64,5 +61,8 @@ describe('Testando o serviço de login quando falha', () => {
     const result = await services.login(email, password);
 
     expect(result).to.be.equal(false);
+
+    models.find.restore();
+    bcrypt.compare.restore();
   });
 });

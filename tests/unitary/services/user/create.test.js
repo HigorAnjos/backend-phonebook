@@ -9,10 +9,12 @@ describe('Testando a services user create quando sucesso', () => {
 
   before(() => {
     sinon.stub(models, 'create').returns(MOC);
+    sinon.stub(models, 'find').returns(null);
   });
 
   after(() => {
     models.create.restore();
+    models.find.restore();
   });
 
   it('Deve retornar o insertId criado', async () => {
@@ -31,13 +33,16 @@ describe('Testando a services user create quando erro', () => {
 
   before(() => {
     sinon.stub(models, 'create').returns(MOC);
+    sinon.stub(models, 'find').returns({ dataValues: true });
+
   });
 
   after(() => {
     models.create.restore();
+    models.find.restore();
   });
 
-  it('Deve retornar null', async () => {
+  it('Deve retornar null quando email ja cadastrado', async () => {
     const name = 'Teste';
     const email = 'test@gmail.com';
 
