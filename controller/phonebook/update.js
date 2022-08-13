@@ -8,7 +8,7 @@ const update = async (req, res) => {
   const isOk = await services.update(userId, name, phone, phoneId);
 
   if (!isOk) {
-    return res.status(400).json({ error: 'Não foi possivel atualizar o numero' });
+    return res.status(400).json({ message: 'Não foi possivel atualizar o numero' });
   }
 
   return res.status(200).json({ message: 'Numero atualizado com sucesso' });

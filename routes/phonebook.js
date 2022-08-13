@@ -187,10 +187,10 @@ router.put('/update/:id', auth, update);
  *             schema:
  *             type: object
  *             properties:
- *               error:
+ *               message:
  *                 type: string
  *             example:
- *               error: Não foi possivel atualizar o numero
+ *               message: Não foi possivel atualizar o numero
  *
  */
 
