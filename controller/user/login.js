@@ -15,14 +15,14 @@ const login = async (req, res) => {
   // valida
   if (!email || !userInsertedPassword) {
     return res.status(400).json({
-      error: 'Dados incompletos',
+      message: 'Dados incompletos',
     });
   }
   const userCanLogin = await services.login(email, userInsertedPassword);
 
   if (!userCanLogin) {
     return res.status(400).json({
-      error: 'Senha ou email incorretos',
+      message: 'Senha ou email incorretos',
     });
   }
 

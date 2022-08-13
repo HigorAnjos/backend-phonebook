@@ -4,6 +4,7 @@ const { login, create, update, remove } = require('../controller/user');
 
 const router = express.Router({ mergeParams: true });
 
+router.post('/login', login);
 /**
  * @swagger
  *  /user/login:
@@ -41,14 +42,14 @@ const router = express.Router({ mergeParams: true });
  *             schema:
  *               type: object
  *               properties:
- *                 error:
+ *                 message:
  *                   type: string
  *               example:
- *                  error: Senha ou email incorretos
+ *                  message: Senha ou email incorretos
  *
  */
-router.post('/login', login);
 
+router.post('/create', create);
 /**
  * @swagger
  *  /user/create:
@@ -85,8 +86,8 @@ router.post('/login', login);
  *                  id: 5
  *
  */
-router.post('/create', create);
 
+router.put('/update', auth, update);
 /**
  * @swagger
  *  /user/update:
@@ -129,14 +130,14 @@ router.post('/create', create);
  *             schema:
  *               type: object
  *               properties:
- *                 error:
+ *                 message:
  *                   type: string
  *               example:
- *                  error: Não foi possivel atualizar o usuário
+ *                  message: Não foi possivel atualizar o usuário
  *
  */
-router.put('/update', auth, update);
 
+router.delete('/delete', auth, remove);
 /**
  * @swagger
  *  /user/delete:
@@ -162,12 +163,11 @@ router.put('/update', auth, update);
  *             schema:
  *               type: object
  *               properties:
- *                 error:
+ *                 message:
  *                   type: string
  *               example:
- *                  error: Não foi possivel remover o usuário
+ *                  message: Não foi possivel remover o usuário
  *
  */
-router.delete('/delete', auth, remove);
 
 module.exports = router;

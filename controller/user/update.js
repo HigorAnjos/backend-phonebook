@@ -7,7 +7,7 @@ const update = async (req, res) => {
 
   if (!name || !email || !password) {
     return res.status(400).json({
-      error: 'Dados incompletos para atualizar',
+      message: 'Dados incompletos para atualizar',
     });
   }
 
@@ -16,7 +16,7 @@ const update = async (req, res) => {
   const userUpdated = await services.update(name, email, passwordHash, userId);
 
   if (!userUpdated) {
-    return res.status(400).json({ error: 'Não foi possivel atualizar o usuário' });
+    return res.status(400).json({ message: 'Não foi possivel atualizar o usuário' });
   }
 
   return res.status(200).json({ message: 'Usuário atualizado com sucesso' });

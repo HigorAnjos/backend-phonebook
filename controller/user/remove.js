@@ -6,7 +6,7 @@ const remove = async (req, res) => {
   const userRemoved = await services.remove(userId);
 
   if (!userRemoved) {
-    return res.status(400).json({ error: 'Não foi possivel remover o usuário' });
+    return res.status(400).json({ message: 'Não foi possivel remover o usuário' });
   }
 
   return res.status(200).json({ message: 'Usuário removido com sucesso' });
