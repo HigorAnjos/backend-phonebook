@@ -5,7 +5,7 @@ const create = async (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
     return res.status(400).json({
-      error: 'Dados incompletos',
+      message: 'Dados incompletos',
     });
   }
   // crypto password
@@ -16,7 +16,7 @@ const create = async (req, res) => {
 
   if (!isOk) {
     return res.status(400).json({
-      error: 'Erro ao criar usuário',
+      message: 'Erro ao criar usuário',
     });
   }
 
