@@ -23,7 +23,7 @@ describe('Rota user login', () => {
       password: "1234",
     };
 
-    const response = await request.post("/user/").send(user);
+    const response = await request.post("/user/login").send(user);
 
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty("token");
@@ -36,7 +36,7 @@ describe('Rota user login', () => {
       password: "123456",
     };
 
-    const response = await request.post("/user/").send(user);
+    const response = await request.post("/user/login").send(user);
 
     expect(response.status).toBe(400);
     expect(response.body).toHaveProperty("error");
@@ -49,7 +49,7 @@ describe('Rota user login', () => {
       password: "1234",
     };
 
-    const response = await request.post("/user/").send(user);
+    const response = await request.post("/user/login").send(user);
 
     expect(response.status).toBe(400);
     expect(response.body).toHaveProperty("error");
@@ -63,7 +63,7 @@ describe('Rota user login', () => {
       password: "",
     };
 
-    const response = await request.post("/user/").send(user);
+    const response = await request.post("/user/login").send(user);
 
     expect(response.status).toBe(400);
     expect(response.body).toHaveProperty("error");
