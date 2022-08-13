@@ -368,7 +368,7 @@
 ## Heroku
 
 O projeto esta disponivel online no
-[Heroko :smile:](https://aqueous-hollows-23591.herokuapp.com/)
+[Heroko :smile:](https://backend-phonebook-2930.herokuapp.com/)
 
 ## Postman
 Download dos [endpoints](https://github.com/HigorAnjos/backend-phonebook/blob/main/API.postman_collection.json)
