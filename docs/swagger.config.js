@@ -10,6 +10,10 @@ const swaggerConfig = {
     },
     servers: [
       {
+        url: 'https://backend-phonebook-2930.herokuapp.com/',
+        description: 'Producao',
+      },
+      {
         url: `http://localhost:${PORT}`,
         description: 'Servidor local',
       },
