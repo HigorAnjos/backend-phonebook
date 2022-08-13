@@ -32,6 +32,13 @@ module.exports = {
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
+      {
+        name: 'docs',
+        email: 'docs@api.com',
+        password: '$2b$10$toVId8TZeDXvnlr6oVZJW.t8hBdNIkWib3tNrXOTY9y8oy50RCXZG', //  password:1234
+        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+      },
     ], {}),
 
   down: async (queryInterface) => queryInterface.bulkDelete('Users', null, {}),

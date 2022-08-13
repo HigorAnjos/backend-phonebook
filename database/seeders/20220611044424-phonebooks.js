@@ -232,6 +232,13 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        name: 'pessoa legal',
+        phone: '+380967891234',
+        user_id: 5,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ], {});
   },
 
