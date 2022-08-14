@@ -76,7 +76,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 ```bash
 # Clone este repositório
-$ git clone git@github.com:HigorAnjos/xp-backend.git
+$ git clone git@github.com:HigorAnjos/backend-phonebook.git
 
 # Rodar o docker-compose
 $ docker-compose up -d
