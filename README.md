@@ -3,8 +3,8 @@
 <p align="center">Esse projeto e uma API de uma agenda telefonica. :open_book:</p>
 
 <p align="center">
-  <a href="#Swagger">Swagger</a> •
   <a href="#Heroku">Heroku</a> •
+  <a href="#Swagger">Swagger</a> •
   <a href="#Node">Node</a> •
   <a href="#Docker-compose">Docker-compose</a> •
   <a href="#Postman">Postman</a> •
