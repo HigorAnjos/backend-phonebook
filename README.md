@@ -112,8 +112,7 @@ Download dos [endpoints](https://github.com/HigorAnjos/backend-phonebook/blob/ma
 
 :hammer_and_wrench: As seguintes ferramentas foram usadas na construção do projeto:
 
-- [Git](https://git-scm.com/)
-- [Github Actions :octocat:](https://docs.github.com/pt/actions)
+- [Git :octocat:](https://git-scm.com/)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [JWT :closed_lock_with_key:](https://jwt.io/)
 - [Node](https://nodejs.org/en/)
