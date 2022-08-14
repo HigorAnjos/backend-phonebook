@@ -11,20 +11,20 @@ const {
 
 module.exports = {
   development: {
-    username: 'root',
-    password: 'password',
-    database: 'model_phonebook',
-    host: '127.0.0.1',
-    dialect: 'mysql',
-    port: 3306,
+    username: DB_USER || 'root',
+    password: DB_PASSWORD || 'password',
+    database: DB_NAME || 'model_phonebook',
+    host: DB_HOST || 'localhost',
+    dialect: DB_DIALECT || 'mysql',
+    port: DB_PORT || 3306,
   },
   test: {
-    username: 'root',
-    password: 'password',
-    database: 'model_phonebook',
-    host: '127.0.0.1',
-    dialect: 'mysql',
-    port: 3306,
+    username: DB_USER || 'root',
+    password: DB_PASSWORD || 'password',
+    database: DB_NAME || 'model_phonebook',
+    host: DB_HOST || 'localhost',
+    dialect: DB_DIALECT || 'mysql',
+    port: DB_PORT || 3306,
   },
   production: {
     username: DB_USER,
