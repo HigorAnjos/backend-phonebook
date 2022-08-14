@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "mocha": "mocha tests/models/phonebook/list.test.js --exit",
-    "test:uni": "mocha ./tests/unitary/**/**/*$NAMETEST*.test.js --exit",
-    "test:nyc": "nyc --all mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
-    "test": "jest --runInBand --testTimeout=60000",
-    "test:cov": "jest --runInBand --testTimeout=60000 --coverage",
     "dev": "nodemon index.js",
     "start": "node index.js",
     "lint": "eslint -c .eslintrc.json .",
+    "mocha": "mocha tests/models/phonebook/list.test.js --exit",
+    "test": "jest --runInBand --testTimeout=60000",
+    "test:uni": "mocha ./tests/unitary/**/**/*$NAMETEST*.test.js --exit",
+    "test:nyc": "nyc --all mocha ./tests/**/**/**/*$NAMETEST*.test.js --exit",
+    "test:cov": "jest --runInBand --testTimeout=60000 --coverage",
+    "docker:node": "docker exec -it phonebook_node bash",
+    "docker:db": "docker exec -it phonebook_db bash",
     "restart": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all"
   },
   "jest": {
